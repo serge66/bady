@@ -50,6 +50,12 @@ public class MainActivity extends BaseActivity {
      * 再点一次退出，记录上一次点击时间
      */
     private long mLastTime = 0;
+    /**
+     * 侧滑菜单
+     */
+    private SlidingMenu mSlidingMenu;
+
+    public static MainActivity mMainActivity;
 
     @Override
     public void initView() {
@@ -61,6 +67,8 @@ public class MainActivity extends BaseActivity {
         rbSchool = (RadioButton) findViewById(R.id.rb_school);
         rbMessage = (RadioButton) findViewById(R.id.rb_message);
         rbMine = (RadioButton) findViewById(R.id.rb_mine);
+
+        mMainActivity = this;
 
     }
 
@@ -93,25 +101,21 @@ public class MainActivity extends BaseActivity {
 //        fragmentTransaction.replace(R.id.ll_content, new SchoolFragment());
         fragmentTransaction.commit();
 
-        // customize the SlidingMenu
-        SlidingMenu sm = getSlidingMenu();
-        sm.setShadowWidth(50);
-//        sm.setShadowDrawable(R.drawable.shadow);
-        sm.setBehindOffset(400);
-        sm.setFadeDegree(0.35f);
-        //设置slding menu的几种手势模式
-        //TOUCHMODE_FULLSCREEN 全屏模式，在content页面中，滑动，可以打开sliding menu
-        //TOUCHMODE_MARGIN 边缘模式，在content页面中，如果想打开slding ,你需要在屏幕边缘滑动才可以打开slding menu
-        //TOUCHMODE_NONE 自然是不能通过手势打开啦
-        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        mSlidingMenu = getSlidingMenu();
+        mSlidingMenu.setShadowWidth(50);
+        //设置分割线背景
+        mSlidingMenu.setShadowDrawable(R.mipmap.button_background);
 
-        //使用左上方icon可点，这样在onOptionsItemSelected里面才可以监听到R.id.home
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
+
+        mSlidingMenu.setBehindOffset(widthPixels / 4);
+        // 设置渐入渐出效果的值
+        mSlidingMenu.setFadeDegree(0.35f);
 
 
-        /**
-         * 默认选中校园
-         */
+        //设置SlidingMenu与下方视图的移动的速度比，当为1时同时移动，取值0-1
+        mSlidingMenu.setBehindScrollScale(1.0f);
+        //默认选中校园
         fragmentManager = getSupportFragmentManager();
         jumpPager(R.id.rb_school);
         rgMain.check(R.id.rb_school);
@@ -171,6 +175,7 @@ public class MainActivity extends BaseActivity {
             case R.id.rb_school:// 校园
                 beginTransaction.replace(R.id.fl_main, fragmentList.get(2),
                         TAG_School);
+
                 break;
 
             case R.id.rb_message:// 消息
@@ -188,5 +193,15 @@ public class MainActivity extends BaseActivity {
         }
 
         beginTransaction.commit();
+    }
+
+
+    /**
+     * 返回slidingMenu对象
+     *
+     * @return
+     */
+    public SlidingMenu getmSlidingMenu() {
+        return mSlidingMenu;
     }
 }

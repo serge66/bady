@@ -46,15 +46,16 @@ public abstract class BaseFragment extends Fragment {
     public abstract View initView();
 
     /**
-     * 初始化数据
-     */
-    public abstract void initData();
-
-    /**
      * 初始化监听
      *
      * @return
      */
     public abstract void initListener();
+
+    /**
+     * 初始化数据
+     */
+    public abstract void initData();
+
 
 }
