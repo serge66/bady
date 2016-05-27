@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_find"
+                style="@style/MyRadioButton"
+                android:drawableTop="@drawable/selector_drawable_find"
+                android:text="@string/find" />
+
+            <RadioButton
+                android:id="@+id/rb_community"
+                style="@style/MyRadioButton"
+                android:drawableTop="@drawable/selector_drawable_community"
+                android:text="@string/community" />
+
+            <RadioButton
+                android:id="@+id/rb_school"
+                style="@style/MyRadioButton"
+                android:drawableTop="@drawable/selector_drawable_school"
+                android:text="@string/school" />
+
+            <RadioButton
+                android:id="@+id/rb_message"
+                style="@style/MyRadioButton"
+                android:drawableTop="@drawable/selector_drawable_message"
+                android:text="@string/message" />
+
+            <RadioButton
+                android:id="@+id/rb_mine"
+                style="@style/MyRadioButton"
+                android:drawableTop="@drawable/selector_drawable_mine"
+                android:text="@string/mine" />
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

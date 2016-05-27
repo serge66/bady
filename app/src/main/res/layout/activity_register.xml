@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_phone_interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/login_phone_picture_width"
+                android:layout_height="@dimen/login_phone_picture_height"
+                android:background="@mipmap/mobile" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="@dimen/login_et_phone_width"
+                android:layout_height="@dimen/login_et_phone_height"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="@string/register_phone"
+                android:paddingLeft="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@id/ll_phone_interior"
+            android:layout_alignRight="@id/ll_phone_interior"
+            android:layout_below="@id/ll_phone_interior"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_pwd_interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/login_phone_picture_width"
+                android:layout_height="@dimen/login_phone_picture_height"
+                android:background="@mipmap/captcha" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="@dimen/register_et_identifying_width"
+                android:layout_height="@dimen/login_et_phone_height"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="@string/register_identifying"
+                android:paddingLeft="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/identifying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#aaffffff"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:text="获取验证码"
+                android:textColor="@drawable/selector_tv_color_identifying"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@id/ll_pwd_interior"
+            android:layout_alignRight="@id/ll_pwd_interior"
+            android:layout_below="@id/ll_pwd_interior"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shape_text_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
+            android:text="登    录"
+            android:textColor="@drawable/selector_tv_color"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/shape_text_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
+            android:text="下一步"
+            android:textColor="@drawable/selector_tv_color"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

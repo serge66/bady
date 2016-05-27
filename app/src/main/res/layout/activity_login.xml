@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/ll_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_phone_interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/login_phone_picture_width"
+                android:layout_height="@dimen/login_phone_picture_height"
+                android:background="@mipmap/iconfont_wode" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="@dimen/login_et_phone_width"
+                android:layout_height="@dimen/login_et_phone_height"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="@string/login_name"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@id/ll_phone_interior"
+            android:layout_alignRight="@id/ll_phone_interior"
+            android:layout_below="@id/ll_phone_interior"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_pwd_interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/login_phone_picture_width"
+                android:layout_height="@dimen/login_phone_picture_height"
+                android:background="@mipmap/iconfont_mima" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="@dimen/login_et_phone_width"
+                android:layout_height="@dimen/login_et_phone_height"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="@string/login_pwd"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@id/ll_pwd_interior"
+            android:layout_alignRight="@id/ll_pwd_interior"
+            android:layout_below="@id/ll_pwd_interior"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shape_text_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
+            android:text="注    册"
+            android:textColor="@drawable/selector_tv_color"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/shape_text_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="2dp"
+            android:text="登    录"
+            android:textColor="@drawable/selector_tv_color"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/retrieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:text="找回密码"
+        android:textColor="#ffffff"
+        android:textSize="10sp" />
+
+</LinearLayout>
