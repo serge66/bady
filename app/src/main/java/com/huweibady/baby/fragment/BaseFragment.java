@@ -12,49 +12,49 @@ import com.huweibady.baby.utils.Constants;
 
 public abstract class BaseFragment extends Fragment {
 
-	/**
-	 * 父类定义公共的SharedPreferences
-	 */
-	public SharedPreferences sp;
+    /**
+     * 父类定义公共的SharedPreferences
+     */
+    public SharedPreferences mSp;
 
-	/**
-	 * 上下文环境
-	 */
-	public Context context;
+    /**
+     * 上下文环境
+     */
+    public Context mContext;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		context = getActivity();
-		sp = context.getSharedPreferences(Constants.SP_FINENAME,
-				context.MODE_PRIVATE);
+        mContext = getActivity();
+        mSp = mContext.getSharedPreferences(Constants.SP_FINENAME,
+                mContext.MODE_PRIVATE);
 
-	}
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		return initView();
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return initView();
+    }
 
-	/**
-	 * 初始化布局
-	 * 
-	 * @return
-	 */
-	public abstract View initView();
+    /**
+     * 初始化布局
+     *
+     * @return
+     */
+    public abstract View initView();
 
-	/**
-	 * 初始化数据
-	 */
-	public abstract void initData();
+    /**
+     * 初始化数据
+     */
+    public abstract void initData();
 
-	/**
-	 * 初始化监听
-	 * 
-	 * @return
-	 */
-	public abstract View initListener();
+    /**
+     * 初始化监听
+     *
+     * @return
+     */
+    public abstract void initListener();
 
 }

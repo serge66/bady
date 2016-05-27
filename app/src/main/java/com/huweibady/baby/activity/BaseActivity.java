@@ -7,8 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.huweibady.baby.R;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
-public abstract class BaseActivity extends FragmentActivity implements
+public abstract class BaseActivity extends SlidingFragmentActivity implements
         OnClickListener {
 
     /**
@@ -17,12 +20,16 @@ public abstract class BaseActivity extends FragmentActivity implements
     public Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(setLayoutResID());
 
         mContext = this;
+
+        setBehindContentView(R.layout.fragment_school_menu);
+        SlidingMenu sm = getSlidingMenu();
+        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
 
         initView();
 

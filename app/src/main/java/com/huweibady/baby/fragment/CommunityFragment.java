@@ -21,9 +21,8 @@ public class CommunityFragment extends BaseFragment {
 	}
 
 	@Override
-	public View initListener() {
-		// TODO Auto-generated method stub
-		return null;
+	public void initListener() {
+
 	}
 
 }

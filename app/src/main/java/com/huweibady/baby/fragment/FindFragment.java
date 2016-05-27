@@ -5,23 +5,22 @@ import android.widget.TextView;
 
 public class FindFragment extends BaseFragment {
 
-	@Override
-	public View initView() {
+    @Override
+    public View initView() {
 
-		TextView tv = new TextView(getActivity());
-		tv.setText("发现");
-		
-		return tv;
-	}
+        TextView tv = new TextView(getActivity());
+        tv.setText("发现");
 
-	@Override
-	public void initData() {
+        return tv;
+    }
 
-	}
+    @Override
+    public void initData() {
 
-	@Override
-	public View initListener() {
-		return null;
-	}
+    }
+
+    @Override
+    public void initListener() {
+    }
 
 }
